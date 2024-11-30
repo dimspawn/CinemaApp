@@ -9,7 +9,10 @@ import Foundation
 public struct API {
     static let baseUrl = "https://api.themoviedb.org/3/"
     public static let imageSource = "https://image.tmdb.org/t/p/original"
-    public static var apiKey = "bc64203d9789bfe5a2185d4c651c5602"
+    //public static var apiKey = "bc64203d9789bfe5a2185d4c651c5602"
+    public static var apiKey: String {
+        return APIKeyProvider.shared.getAPIKey()
+    }
 }
 
 protocol Endpoint {
